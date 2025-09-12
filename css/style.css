@@ -168,12 +168,12 @@ html {
 }
 
 /* Our Expertise */
-.our-expertise { padding: 6rem 3rem; background: #f4f4f4; text-align: center; }
+/*.our-expertise { padding: 6rem 3rem; background: #f4f4f4; text-align: center; }
 .case-strip { display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; }
 .case-icon { padding: 1rem 2rem; border-radius: 999px; background: white; box-shadow: 0 3px 8px rgba(0,0,0,0.05); }
-
+*/
 /* Process */
-.process { padding: 6rem 3rem; background: white; text-align: center; }
+.process { padding: 6rem 3rem; background: #f4f4f4; text-align: center; }
 .timeline { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem; }
 .step { flex: 1; min-width: 200px; }
 .step-icon { font-size: 2rem; margin-bottom: 1rem; }
@@ -189,7 +189,7 @@ html {
 /*.about-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; }*/
 
 /* Contact */
-.contact { padding: 6rem 3rem; text-align: center; background: #f2f2f2; }
+.contact { padding: 6rem 3rem; text-align: center; background: white; }
 .contact p { margin-bottom: 1.5rem; }
 
 /* Footer */
