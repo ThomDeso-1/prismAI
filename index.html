@@ -6,21 +6,114 @@
   <title>Prism AI Solutions</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="images/favicon.png" />
+
+  <!-- Mobile-first helpers -->
+  <style>
+    /* --- Mobile-first layout tweaks --- */
+    body { margin: 0; }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    nav ul.active { display: flex; }
+
+    .menu-toggle {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .hero-visual {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      padding: 0 1rem;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 0 1rem;
+    }
+
+    section {
+      padding: 2.5rem 1rem;
+    }
+
+    /* --- Tablet and up --- */
+    @media (min-width: 768px) {
+      nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+      }
+
+      .menu-toggle { display: none; }
+
+      .hero {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+      }
+
+      .hero-content { flex: 1; }
+      .hero-visual { flex: 1; max-width: 100%; }
+
+      .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .timeline {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header class="navbar">
     <div class="logo">
-  <img src="images/icon.png" alt="PrismForge logo" />
-  Prism<span>AI</span>Solutions
-</div>
+      <img src="images/icon.png" alt="PrismForge logo" />
+      Prism<span>AI</span>Solutions
+    </div>
+
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
-        <!-- <li><a href="#our-expertise">Our Expertise</a></li> -->
         <li><a href="#how-we-work">How We Work</a></li>
-        <!-- <li><a href="#about">About</a></li> -->
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -35,24 +128,13 @@
     </div>
     <div class="hero-visual">
       <svg viewBox="0 0 512 512" class="hero-svg">
-  <!-- Apex to base corners -->
-  <path d="M256 64 L64 448" class="neon-path"/>
-  <path d="M256 64 L448 448" class="neon-path"/>
-  <path d="M256 64 L256 448" class="neon-path"/>
-  <!-- Base edges -->
-  <path d="M64 448 L256 320" class="neon-path"/>
-  <path d="M448 448 L256 320" class="neon-path"/>
-  <path d="M64 448 L448 448" class="neon-path"/>
-</svg>
-
-      <!-- <svg viewBox="0 0 512 512" class="hero-svg">
         <path d="M256 64 L64 448" class="neon-path"/>
         <path d="M256 64 L448 448" class="neon-path"/>
         <path d="M256 64 L256 448" class="neon-path"/>
-        <path d="M64 448 L448 448" class="neon-path"/>
         <path d="M64 448 L256 320" class="neon-path"/>
         <path d="M448 448 L256 320" class="neon-path"/>
-      </svg> -->
+        <path d="M64 448 L448 448" class="neon-path"/>
+      </svg>
     </div>
   </section>
 
@@ -61,53 +143,23 @@
     <h2>Our Services</h2>
     <div class="card-grid">
       <div class="card">
-        <div class="card-front">
-          <h3>AI Strategy</h3>
-        </div>
-        <div class="card-back">
-          <p>Roadmaps and guidance tailored for small businesses exploring AI use cases.</p>
-        </div>
+        <div class="card-front"><h3>AI Strategy</h3></div>
+        <div class="card-back"><p>Roadmaps and guidance tailored for small businesses exploring AI use cases.</p></div>
       </div>
       <div class="card">
-        <div class="card-front">
-          <h3>Prompt Engineering</h3>
-        </div>
-        <div class="card-back">
-          <p>Master prompts to unlock the full potential of AI chatbots.</p>
-          <p class="typing-dots"></p>
-        </div>
+        <div class="card-front"><h3>Prompt Engineering</h3></div>
+        <div class="card-back"><p>Master prompts to unlock the full potential of AI chatbots.</p></div>
       </div>
       <div class="card">
-        <div class="card-front">
-          <h3>Automation</h3>
-        </div>
-        <div class="card-back">
-          <p>Streamline tasks like data entry, reporting, and outreach with AI-powered automations.</p>
-        </div>
+        <div class="card-front"><h3>Automation</h3></div>
+        <div class="card-back"><p>Streamline tasks like data entry, reporting, and outreach with AI-powered automations.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Our Expertise -->
-<!--   <section id="our-expertise" class="our-expertise">
-    <h2>Our Expertise</h2>
-    <p>We specialize with adopting AI in industries like retail, healthcare, and professional services.</p>
-    <div class="case-strip">
-      <div class="case-icon">🏪 Retail</div>
-      <div class="case-icon">⚕️ Healthcare</div>
-      <div class="case-icon">💼 Services</div>
-    </div>
-  </section> -->
-
   <!-- How We Work -->
   <section id="how-we-work" class="process">
     <h2>How We Work</h2>
-    <p>We specialize with adopting AI in industries like retail, healthcare, and professional services.</p>
-    <div class="case-strip">
-      <div class="case-icon">🏪 Retail</div>
-      <div class="case-icon">⚕️ Healthcare</div>
-      <div class="case-icon">💼 Services</div>
-    </div>
     <div class="timeline">
       <div class="step">
         <div class="step-icon">📞</div>
@@ -127,30 +179,13 @@
     </div>
   </section>
 
-  <!-- About -->
-<!--   <section id="about" class="about">
-    <h2>About the Founder</h2>
-    <div class="about-card">
-      <img src="assets/images/founder.png" alt="Founder headshot" />
-      <div>
-        <p>👋 Hi, I’m Thomas De Souza. I started PrismForge AI to help small businesses adopt AI the smart way — testing ideas quickly, avoiding hype, and focusing on results.</p>
-      </div>
-    </div>
-  </section> -->
-
   <!-- Contact -->
   <section id="contact" class="contact">
     <h2>Get in Touch</h2>
-    <p>Ready to explore how AI can help your business? Let’s talk.</p>
     <p><strong>Email:</strong> <a href="mailto:hello@prismaiadvantage.com">hello@prismaiadvantage.com</a></p>
-    <p><strong>Address:</strong><br>
-      100 King St W<br>
-      Toronto, ON
-    </p>
     <a href="mailto:hello@prismaiadvantage.com" class="cta-button">Contact Us</a>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <p>© 2025 Prism AI Solutions</p>
   </footer>
